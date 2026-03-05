@@ -18,7 +18,7 @@ const Login = () => {
         try {
             if (isRegister) {
                 const response = await axios.post(
-                    "http://localhost:8081/api/auth/register",
+                    "http://localhost:<BACKEND_PORT>/api/auth/register",
                     { username, password }
                 );
                 setMessage("Registration successful! You can now login.");
@@ -27,7 +27,7 @@ const Login = () => {
                 setPassword("");
             } else {
                 const response = await axios.post(
-                    "http://localhost:8081/api/auth/login",
+                    "http://localhost:<BACKEND_PORT>/api/auth/login",
                     { username, password }
                 );
                 localStorage.setItem("token", response.data.token);

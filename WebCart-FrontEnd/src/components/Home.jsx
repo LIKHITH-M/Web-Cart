@@ -23,7 +23,7 @@ const Home = ({ selectedCategory }) => {
           data.map(async (product) => {
             try {
               const response = await axios.get(
-                `http://localhost:8081/api/product/${product.id}/image`,
+                `http://localhost:<BACKEND_PORT>/api/product/${product.id}/image`,
                 { responseType: "blob", headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
               );
               const imageUrl = URL.createObjectURL(response.data);

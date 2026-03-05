@@ -22,14 +22,14 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/api/product/${id}`,
+          `http://localhost:<BACKEND_PORT>/api/product/${id}`,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
 
         setProduct(response.data);
 
         const responseImage = await axios.get(
-          `http://localhost:8081/api/product/${id}/image`,
+          `http://localhost:<BACKEND_PORT>/api/product/${id}/image`,
           { responseType: "blob", headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
         const imageFile = await converUrlToFile(responseImage.data, response.data.imageName)
@@ -68,7 +68,7 @@ const UpdateProduct = () => {
 
     console.log("formData : ", updatedProduct)
     axios
-      .put(`http://localhost:8081/api/product/${id}`, updatedProduct, {
+      .put(`http://localhost:<BACKEND_PORT>/api/product/${id}`, updatedProduct, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

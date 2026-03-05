@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.likhith</groupId>
-    <artifactId>Part29-SpringSecEx</artifactId>
+    <artifactId>SpringSecEx</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Part29-SpringSecEx</name>
-    <description>Part29-SpringSecEx</description>
+    <name>SpringSecEx</name>
+    <description>SpringSecEx</description>
     <url/>
     <licenses>
         <license/>
